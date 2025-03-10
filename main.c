@@ -1,5 +1,4 @@
 #include <neorv32.h>
-#include <stdint.h>
 
 int main(void) {
   if (neorv32_uart0_available()) {
@@ -13,7 +12,7 @@ int main(void) {
   uint32_t i;
 
   for (i = 0; i < 10; i++) {
-    uint32_t value = 0x0 + i; // For i=0: 0x00, for i=9: 0xFF.
+    uint32_t value = 0x0 + i; 
     neorv32_cpu_store_unsigned_word(src_base + (i * 4), value);
 
     if (neorv32_uart0_available()) {
